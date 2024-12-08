@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Gestion des Produits</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <div class="column">
+                <div class="form-row">
+                    <label>Libellé:</label>
+                    <input type="text" id="libelle">
+                </div>
+
+                <div class="form-row">
+                    <label>Catégorie:</label>
+                    <div class="input-group">
+                        <select id="categorieSelect"></select>
+                        <button id="addCategoryBtn" class="add-btn">Ajouter</button>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label>Quantité:</label>
+                    <input type="number" id="quantite">
+                </div>
+
+                <div class="form-row">
+                    <label>Prix:</label>
+                    <input type="number" id="prix">
+                </div>
+            </div>
+            <div class="column">
+                <div class="form-row">
+                    <label>Fournisseur:</label>
+                    <div class="input-group">
+                        <select id="fournisseurSelect"></select>
+                        <button id="addFournisseurBtn" class="add-btn">Ajouter</button>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label>Unité:</label>
+                    <div class="input-group">
+                        <select id="uniteSelect"></select>
+                        <button id="addUniteBtn" class="add-btn">Ajouter</button>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label>Image:</label>
+                    <div id="imageContainer">
+                        <img id="previewImage" src="/images/image.png" alt="Image par défaut" class="image-preview">
+                        <input type="file" id="image" accept="image/*" style="display: none;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row full-width">
+                <button id="valider" class="submit-btn">VALIDER</button>
+            </div>
+        </div>
+
+        <table id="produitTable">
+            <thead>
+                <tr>
+                    <th>Libellé</th>
+                    <th>Catégorie</th>
+                    <th>Quantité</th>
+                    <th>Prix</th>
+                    <th>Fournisseur</th>
+                    <th>Unité</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Les produits ajoutés vont être insérés ici -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modals for adding categories, suppliers, and units -->
+    <div id="categoryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeCategoryModal">&times;</span>
+            <h3>Ajouter une nouvelle Catégorie</h3>
+            <label>Nom de la Catégorie:</label>
+            <input type="text" id="newCategoryLibelle">
+            <div class="modal-actions">
+                <button id="saveCategoryBtn" class="save-btn">Enregistrer</button>
+                <button class="cancel-btn" id="cancelCategoryBtn">Annuler</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="fournisseurModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeFournisseurModal">&times;</span>
+            <h3>Ajouter un nouveau Fournisseur</h3>
+            <label>Nom du Fournisseur:</label>
+            <input type="text" id="newFournisseurLibelle">
+            <div class="modal-actions">
+                <button id="saveFournisseurBtn" class="save-btn">Enregistrer</button>
+                <button class="cancel-btn" id="cancelFournisseurBtn">Annuler</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="uniteModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeUniteModal">&times;</span>
+            <h3>Ajouter une nouvelle Unité</h3>
+            <label>Nom de l'Unité:</label>
+            <input type="text" id="newUniteLibelle">
+            <div class="modal-actions">
+                <button id="saveUniteBtn" class="save-btn">Enregistrer</button>
+                <button class="cancel-btn" id="cancelUniteBtn">Annuler</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

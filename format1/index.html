@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Gestion des Produits</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Ajouter un Produit</h2>
+        <div class="form">
+            <label>Libellé:</label>
+            <input type="text" id="libelle">
+
+            <label>Catégorie:</label>
+            <select id="categorie">
+                <!-- Les catégories existantes -->
+            </select>
+            <button id="addCategoryBtn">+</button>
+
+            <label>Quantité:</label>
+            <input type="number" id="quantite">
+
+            <label>Unité:</label>
+            <select id="unite">
+                <option value="mètre">mètre</option>
+                <option value="kilogramme">kilogramme</option>
+            </select>
+            <button id="addUniteBtn">+</button>
+
+            <label>Prix:</label>
+            <input type="number" id="prix">
+
+            <label>Fournisseur:</label>
+            <input type="text" id="fournisseur">
+
+            <label>Image:</label>
+            <input type="file" id="image" accept="image/*">
+
+            <button id="valider">VALIDER</button>
+        </div>
+
+        <table id="produitTable">
+            <thead>
+                <tr>
+                    <th>Libellé</th>
+                    <th>Catégorie</th>
+                    <th>Quantité</th>
+                    <th>Prix</th>
+                    <th>Fournisseur</th>
+                    <th>Unité</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Les produits ajoutés vont être insérés ici -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="categoryModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Ajouter une Catégorie</h3>
+            <label>Libellé:</label>
+            <input type="text" id="newCategoryLibelle">
+            <button id="saveCategoryBtn">Enregistrer</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
